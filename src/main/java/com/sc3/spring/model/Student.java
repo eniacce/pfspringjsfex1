@@ -9,6 +9,7 @@ package com.sc3.spring.model;
  */
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 
 @Entity
 @Table(name = "Student")
@@ -19,6 +20,7 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     @Column(name = "username")
+    @Max(value = 5, message = "Please insert at least 5 characters")
     String username;
     @Column(name = "age")
     int age;
